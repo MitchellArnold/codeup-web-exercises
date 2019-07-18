@@ -4,48 +4,55 @@
     <meta charset="UTF-8">
     <title>Forms</title>
 </head>
-<body>
-<form method="POST" action="https://request-inspector.glitch.me/">
-<label for="username"> Username: </label>
-<input type="text" id="username" name="username" placeholder="Enter username">
-    <br>
-<label for="password"> Password: </label>
-<input type="text" id="password" name="password" placeholder="Enter password">
-    <br>
-    <textarea id="bio" name="bio" placeholder="Enter text content here"></textarea>
-    <input type="submit" value="Login">
+    <body>
 
-    <p>How did you hear about us? (Please select all that apply.)</p>
-    <label>
-        <input type="radio" name="1">
-        billboard
-    </label>
-    <label>
-        <input type="radio" name="2">
-        radio advertisement
-    </label>
-    <label>
-        <input type="radio" name="3">
-        internet advertisement
-    </label>
-    <label>
-        <input type="radio" name="4">
-        other
-    </label>
-    <br>
-    <br>
-    <section>
-    <label for="browser">
-        Select your browser
-    </label>
-    <select id="browser" name="browser">
-        <option>Firefox</option>
-        <option>Chrome</option>
-        <option>Explorer</option>
-    </select>
-    </section>
+        <h1> User Login:</h1>
+                <hr>
+            <form method="POST" action="https://request-inspector.glitch.me/"></form>
+                <section>
+            <label for="username"> Username: </label>
+                <input type="text" id="username" name="username" placeholder="Enter username">
+                    </section>
+                    <section>
+                <label for="password"> Password: </label>
+                <input type="text" id="password" name="password" placeholder="Enter password">
+                    </section>
+                    <br>
+                    <h3> Text Content: </h3>
+                    <textarea id="bio" name="bio" placeholder="Enter text content here"></textarea>
+                    <input type="submit" value="Login">
+                             <hr>
+                <p>How did you hear about us? (Please select all that apply.)</p>
+                    <label>
+                        <input type="checkbox" name="1">
+                        billboard
+                    </label>
+                    <label>
+                        <input type="checkbox" name="2">
+                        radio advertisement
+                    </label>
+                    <label>
+                        <input type="checkbox" name="3">
+                        internet advertisement
+                    </label>
+                    <label>
+                        <input type="checkbox" name="4">
+                        other
+                    </label>
+                    <br>
+                    <br>
+                <section>
+                <label for="browser">
+                    Select your browser
+                    </label>
+                        <select id="browser" name="browser">
+                            <option>Firefox</option>
+                            <option>Chrome</option>
+                            <option>Explorer</option>
+                        </select>
+                </section>
 
-</form>
+            </form>
 
-</body>
+    </body>
 </html>
