@@ -8,19 +8,103 @@
         height: 50%;
         width: 50%;
         float: left;
+        position: relative;
+        }
+    /* img:hover {
+        border-radius: 3px;
+        border: 5px solid black;
+        } */
+     .pic_box {
+        margin: 0px auto;
+        width: 200px;
+        height: 200px;
+        }
+
+    body {
+        background-image: url('img/snowfield.jpg');
+
+        background-size: contain;
+        font-family: Sans-Serif, Arial, Monospace;
+        }
+
+    body::after {
+        background-color: lightgrey;
+
+        position: absolute;
+        opacity: 0.5;
+        }
+
+    footer {
+        margin: 0px auto;
+        }
+
+    .vpv {
+        margin: 0px auto;
+        }
+
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+        color: white;
+        }
+    li {
+        list-style-type: square;
+        margin: 0px auto;
+
+        }
+
+    table, th {
+    border: 2px solid black;
+    padding: 5px;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
     }
+
+    table {
+    margin: 0px auto;
+    }
+
+      tr, td {
+    border: 2px solid black;
+    font-size: 26px;
+    }
+
+    tr:hover{
+    font-size: 28px;
+    }
+
+    td:hover {
+    font-size: 20px;
+
+    }
+
+
+
+
+
+    a:hover {
+    font-size: 20px;
+    }
+
+    a:visted {
+    }
+
+
+
+
     </style>
 </head>
         <body>
             <!-------------------------------Beginning of top -------------------------------------------->
-            <header>
+            <header id="0">
                 <h1> Welcome to Veridian Dynamics! </h1>
                 <p>At Veridian Dynamics, <strong> we </strong> solve your problems with     <strong><em>technology</em></strong>.</p>
             </header>
             <hr>
             <!-------------------------------End of top --------------------------------------------------->
             <!-------------------------------Beginning of main -------------------------------------------->
-            <main>
+            <main id="1">
                 <section>
                     <h3>Core Values</h3>
                         <ul>
@@ -48,15 +132,17 @@
 
                 <hr>
 
+                <section class="pic_box">
                 <h3> Company Vision</h3>
                <img src="https://images.pexels.com/photos/848599/pexels-photo-848599.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
                <img src="https://images.pexels.com/photos/848612/pexels-photo-848612.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
                <img src="https://images.pexels.com/photos/209817/pexels-photo-209817.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
                <img src="https://images.pexels.com/photos/240160/pexels-photo-240160.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                </section>
             </main>
             <!-------------------------------End of main ---------------------------------------------------->
             <!-------------------------------Beginning of footer -------------------------------------------->
-            <footer>
+               <section>
                 <h3> Our Product</h3>
                   <table>
                         <tr>
@@ -82,9 +168,11 @@
                             <td> Unlimited Support </td>
                         </tr>
                   </table>
-                    <em> All products come with our quality guarantee&trade;.</em>
-                    <br>
-                    <p><a href="top"> Go to the top of the page.</a></p>
+               </section>
+            <footer id="">
+                <em> All products come with our quality guarantee&trade;.</em>
+                        <br>
+                        <p><a href="top"> Go to the top of the page.</a></p>
             </footer>
             <!-------------------------------End of footer -------------------------------------------->
         </body>
