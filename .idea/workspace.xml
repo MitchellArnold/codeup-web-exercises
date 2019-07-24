@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09f83ece-5cd2-482e-88d1-d5e9b2d56666" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flexbox_nav_exercise.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basic_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/streaming_playing_ui.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Notes/flexbox(reference) .rtf" beforeDir="false" afterPath="$PROJECT_DIR$/Project Notes/flexbox(reference) .rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexbox_nav_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/flexbox_nav_exercise.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +22,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flexbox_nav_exercise.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-290">
-              <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="630">
+              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/basic_grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/streaming_playing_ui.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -97,12 +116,15 @@
         <option value="$PROJECT_DIR$/css/flexbox-cards.css" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.html" />
         <option value="$PROJECT_DIR$/Logo.html" />
+        <option value="$PROJECT_DIR$/flexbox_nav_exercise.html" />
+        <option value="$PROJECT_DIR$/streaming_playing_ui.html" />
+        <option value="$PROJECT_DIR$/basic_grid.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="889" />
+    <option name="width" value="779" />
     <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -121,11 +143,6 @@
             <path>
               <item name="codeup-web-exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="codeup-web-exercises" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codeup-web-exercises" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codeup-web-exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="codeup-web-exercises" type="b2602c69:ProjectViewProjectNode" />
@@ -187,7 +204,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="889" height="824" extended-state="0" />
+    <frame x="0" y="23" width="779" height="824" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info auto_hide="true" content_ui="combo" id="Project" order="0" sideWeight="0.49142858" weight="0.3293979" />
@@ -204,7 +221,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.36626506" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.36612022" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -490,8 +507,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flexbox_nav_exercise.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="630">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming_playing_ui.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic_grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
