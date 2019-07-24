@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Navigation Bar </title>
+    <link rel="stylesheet" href="">
+    <!-- Font Awesome -->
+    <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.8.1/css/all.css” integrity=“sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf” crossorigin=“anonymous”>
+    <style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #333333;
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    display: inline-block;
+    padding: 1em;
+}
+nav a:hover {
+    background: black;
+}
+li:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    left: 45%;
+    position: absolute;
+}
+h1 {
+    border: none;
+}
+<!--nav a:hover:nth-child(5) {
+    background: none;
+}     ( Logo is hovering black background)
+li:nth-child(n+6) {
+    justify-content: flex-end;
+}-->
+
+img {
+    width: 15%;
+    height: 15%;
+}
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Market</a></li>
+        <li><a href="#">Jobs</a></li>
+    </ul>
+    <ul>
+        <li><a href="#"><h1>Logo</h1></a></li>
+    </ul>
+    <ul>
+        <li><a href="#"> Follow Us </a></li>
+        <li><a href="#"><img src="/img/search_glass.raw" alt="mag_glass"></a></li>
+        <li><a href="#"><img src="/img/shopping_cart.raw" alt="shop_cart"></a></li>
+        <li><a href="#"><img src="/img/profile_icon.raw" alt="profile_icon"></a></li>
+    </ul>
+
+</nav>
+</body>
+</html>
