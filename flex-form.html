@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Flex form</title>
     <link rel="stylesheet" href="css/flex-form.css">
-    <script>
+    <!--<script>
     var video = document.getElementById("puppy");
     var btn = document.getElementById("myBtn");
 
@@ -17,7 +17,7 @@
            btn.innerHTML = "Play";
          }
         }
-   </script>
+   </script>-->
 </head>
 <body>
 
@@ -40,14 +40,11 @@
 
         <input type="submit" class="btn-primary" value="search">
     </form>
-    <video autoplay muted loop id="puppy">
-        <source src="img/cover/puppiness.mp4" type="video/mp4">
-    </video>
-    <button id="myBtn" onclick="myFunction()"> Pause </button>
+<!--    <button id="pauseBtn" onclick="videoPlayback()"> Pause </button>-->
 </div>
 <video autoplay loop class="puppiness">
     <source src="cover/puppiness.webm">
-    <source src="cover/puppiness.mp4">
+    <source src="img/cover/puppiness.mp4" type="video/mp4">
     <source src="cover/puppiness.ogv">
 </video>
 </body>
