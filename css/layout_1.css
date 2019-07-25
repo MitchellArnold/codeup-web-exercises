@@ -1,0 +1,37 @@
+
+
+
+#wrapper{
+    display: grid;
+    border: 1px solid grey;
+    height: 1080px;
+    width: 1920px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+#wrapper>*{
+    background-color: #FBD400;
+    border: .5em solid white;
+}
+header{
+    grid-area: header;
+    grid-area: 1 / 1 / span 4 / span 8;
+}
+nav{
+    display: flex;
+    grid-area: 4 / 1 / span 5 / span 2;
+}
+article{
+    display: flex;
+    grid-area: 4 / 3 / span 3 / span 4;
+}
+.ads{
+    display: flex;
+    grid-area: 4 / 7 / span 3 / span 2;
+
+}
+footer{
+    display: flex;
+    grid-area: 7 / 3 / span 2 / span 6;
+
+}
