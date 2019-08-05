@@ -37,14 +37,14 @@ alert('Welcome to my Website!');
 ////== true;
 //alert("It is" + " " + studentEnroll + " " + "that the student may enroll.");
 
-//
-//var numberOfItems = prompt("How many items?");
-//var premiumOffer = confirm(prompt("Are you a premium member?"));
-//var validOffer;
-//var productDiscountApplied = validOffer && (premiumOffer || numberOfItems < 2);
-//
-//
-//alert(productDiscountApplied);
+
+var numberOfItems = prompt("How many items?");
+var premiumOffer = confirm("Click ok if you are a premium member.");
+var validOffer = confirm("Click ok if offer is valid.");
+var productDiscountApplied = (validOffer || numberOfItems < 2) && premiumOffer;
+
+
+alert("It is" + " " + productDiscountApplied + " " + "that the offer can be applied.");
 //
 //
 //
