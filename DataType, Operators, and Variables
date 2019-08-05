@@ -59,6 +59,8 @@ true
 
 
 
+sample.substring(sample.indexOf("Codeup"), sample.+ "Codeup".length
+
 var sample = "Hello CodeUp";
 sample.length
 
@@ -79,8 +81,39 @@ sample.indexOf("C"):
 
 class = sample.substring(5,12)
 
+
+3)
 var littleMermaid = 3 + " days"
 var brotherBear = 5 + " days" + " loved by viewers"
 var Hercules = 1 + " days" + " unsure"
 var price = "$" + 3 + " per day"
 var user_price = price
+
+
+var google = 400;
+var amazon = 380;
+var facebook = 350;
+var totalPayment = "$" ( (google * 6) + (amazon * 4) + (facebook * 10) );
+
+
+var classSched;
+var currentSched;
+var studentEnroll = true;
+
+( classSched && currentSched )
+
+var offer = 0;
+(offer < 2) == "Valid product offer";
+var premiumOffer == "No specific product amount";
+
+
+var username = 'codeup';
+var password = 'notastrongpassword';
+password.length > 5;
+password !== username;
+username.length < 20;
+username || password !== " ";
+
+
+
+
