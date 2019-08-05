@@ -59,7 +59,7 @@ true
 
 
 
-sample.substring(sample.indexOf("Codeup"), sample.+ "Codeup".length
+comment :: sample.substring(sample.indexOf("Codeup"), sample.+ "Codeup".length
 
 var sample = "Hello CodeUp";
 sample.length
@@ -90,29 +90,41 @@ var price = "$" + 3 + " per day"
 var user_price = price
 
 
-var google = 400;
-var amazon = 380;
-var facebook = 350;
-var totalPayment = "$" ( (google * 6) + (amazon * 4) + (facebook * 10) );
+
+var googleHourlyPay = 400;
+var amazonHourlyPay = 380;
+var facebookHourlyPay = 350;
+
+var googleHoursWorked = 6;
+var amazonHoursWorked = 4;
+var facebookHoursWorked = 10;
+
+var totalPayment = "$" ( (googleHourlyPay * googleHoursWorked ) + (amazonHourlyPay * amazonHoursWorked ) + (facebookHourlyPay * facebookHoursWorked ) );
 
 
-var classSched;
-var currentSched;
-var studentEnroll = true;
 
-( classSched && currentSched )
+
+var classSched = false;
+var currentSched = false;
+var studentEnroll = false;
+studentEnroll = ( classSched && currentSched ) == true;
+
+
 
 var offer = 0;
 (offer < 2) == "Valid product offer";
 var premiumOffer == "No specific product amount";
 
 
+
+
 var username = 'codeup';
 var password = 'notastrongpassword';
-password.length > 5;
+password.length >= 5;
 password !== username;
 username.length < 20;
-username || password !== " ";
+username || password !== username.trim() || username.trim();
+
 
 
 
