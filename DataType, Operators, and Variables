@@ -1,0 +1,86 @@
+var a = 1;
+var b = 2;
+var c = 2;
+
+d = "hello", "hello"
+e = false, false
+
+perplexed2
+
+price = 2.70
+
+price = "2.70"
+
+
+
+false
+
+false
+
+true
+
+true
+
+false
+
+false
+
+false
+
+false
+
+true
+
+true
+
+true
+
+true
+
+true
+
+false
+
+
+
+
+false
+true
+true
+false
+false
+false
+true
+true
+true
+false
+false
+true
+
+
+
+var sample = "Hello CodeUp";
+sample.length
+
+sample.toLowerCase();
+
+sample += "Hello CodeUp Students";
+
+sample.replace("Students");
+
+sample.indexOf("c");
+-1
+
+sample.indexOf("C");
+6
+
+sample.indexOf("C"):
+5
+
+class = sample.substring(5,12)
+
+var littleMermaid = 3 + " days"
+var brotherBear = 5 + " days" + " loved by viewers"
+var Hercules = 1 + " days" + " unsure"
+var price = "$" + 3 + " per day"
+var user_price = price
