@@ -10,6 +10,14 @@
 //     console.log(temp)
 //     temp *= 2;
 // }
+//
+// var i = 1;
+// while (i < 17) {
+//     console.log(Math.pow(2,i)+ "\n");
+//     i++;
+// }
+
+
 
 //// third question
 // var allcones = Math.floor(Math.random() * 50) + 50; // number of total cones
@@ -41,6 +49,8 @@
 //     }
 // } while (temp_total <= allcones)
 //
+
+
 // var allcones = Math.floor(Math.random() * 50) + 50; // number of total cones
 // console.log("All cones: " + allcones)
 // var conesCapPerSale = 5; // max cones amount per transaction
@@ -53,8 +63,7 @@
 //     if (conesPerCustomer <= conesCapPerSale) {
 //         console.log("You have sold " + conesPerCustomer + " cones. Great job!")
 //     } else {
-//         break;
-//         /// needs to allow greater than 5
+//         console.log("You don't have enough cones.")
 //     }
 //
 //

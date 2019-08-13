@@ -12,13 +12,13 @@
 
 //// third question
 
-for (var i = 0; i < 50; i++) {
-    if (i === 27) {
-        console.log("Yikes! Skipping number: " + i);
-        continue;
-    }
-    if (i % 2 === 1) {
-        console.log("Here is an odd number: " + i)
-
-    }
-}
+// for (var i = 0; i < 50; i++) {
+//     if (i === 27) {
+//         console.log("Yikes! Skipping number: " + i);
+//         continue;
+//     }
+//     if (i % 2 === 1) {
+//         console.log("Here is an odd number: " + i)
+//
+//     }
+// }
