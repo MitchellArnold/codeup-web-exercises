@@ -14,12 +14,19 @@
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log(names.length);
+    function namesNumber(name) {
+        console.log(name);
+    }
+    namesNumber(names);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      * */
+
+    // ForEach(function namer(name,index,array){
+    //
+    // })
 
     console.log(("First name of name array; ") + names[0]);
     console.log(("Second name of name array; ") + names[1]);
@@ -58,21 +65,49 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+
+//  first attempt... (created completely different array)
+//
+//     function arrayReturn_1(names) {
+//     return names[0]
+//     }
+//
+// console.log(arrayReturn_1(["Jack", "Bill", "George", "Will"]));
+//
+//     function arrayReturn_2(names) {
+//         return names[1]
+//     }
+// console.log(arrayReturn_2(["Jack", "Bill", "George", "Will"]));
+//
+// function arrayReturn_3(names) {
+//     return names[2]
+// }
+// console.log(arrayReturn_3(["Jack", "Bill", "George", "Will"]));
+//
+
+
+
+    function first(arr){
+        return arr[0]
+    }
+
+    function second(arr){
+        return arr[1]
+    }
+
+    function third(arr){
+        return arr[2]
+    }
+
+    function fourth(arr){
+        return arr[3]
+    }
+
+
+    console.log("The first function will run: " + first(names));
+    console.log("The second function will run: " + second(names));
+    console.log("The third function will run: " + third(names));
+    console.log("The fourth function will run: " + fourth(names));
+
+
 })();
-
-
-    function arrayReturn_1(names) {
-    return names[0]
-    }
-
-console.log(arrayReturn_1(["Jack", "Bill", "George", "Will"]));
-
-    function arrayReturn_2(names) {
-        return names[1]
-    }
-console.log(arrayReturn_2(["Jack", "Bill", "George", "Will"]));
-
-function arrayReturn_3(names) {
-    return names[2]
-}
-console.log(arrayReturn_3(["Jack", "Bill", "George", "Will"]));
