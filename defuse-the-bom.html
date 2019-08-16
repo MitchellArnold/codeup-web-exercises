@@ -10,13 +10,13 @@
 <button id="defuser">Defuse the BOM</button>
 
 <script>
-(function() {
+(function(){
     "use strict";
 
     var detonationTimer = 5;
 
     // TODO: This function needs to be called once every second
-    function updateTimer() {
+   function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
@@ -27,10 +27,18 @@
         detonationTimer--;
     }
 
-    // TODO: When this function runs, it needs to
+
+        var wait = 1000;
+     var interval = setInterval (function () {
+         updateTimer();
+     }, wait);
+
+        console.log(interval);
+
+// TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+        clearTimeout(interval);
     }
 
     // Don't modify anything below this line!
