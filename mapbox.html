@@ -53,19 +53,27 @@
     // this code will produce a console log every second
     // when count >= max, the interval is cancelled, and the logging will stop
 
-    var count = 0;
-    var max = 5;
+    // var count = 0;
+    // var max = 5;
+    //
+    // var intervalId = setInterval(function () {
+    //     if (count >= max) {
+    //         map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    //         map.jumpTo({center: [-93.4733, 13.4252],
+    //         zoom: 2,})
+    //
+    //     } else {
+    //         count++;
+    //     }
+    // }, 1000);
 
-    var intervalId = setInterval(function () {
-        if (count >= max) {
-            map.setStyle('mapbox://styles/mapbox/satellite-v9');
-            map.jumpTo({center: [-93.4733, 13.4252],
-            zoom: 2,})
+    // walkthrough
+    setTimeout(function () {
+        map.setStyle('mapbox://styles/mapbox/satellite-v9');
+        map.setZoom(3);
+    }, 5000);
 
-        } else {
-            count++;
-        }
-    }, 1000);
+
 
 
 //
