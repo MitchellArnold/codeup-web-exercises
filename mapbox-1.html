@@ -42,6 +42,9 @@
         center: [-99.7331, 32.4487],
     });
 
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4916, 29.4260])
+        .addTo(map);
 
     'use strict';
 
@@ -68,11 +71,11 @@
     // }, 1000);
 
     // walkthrough
-    setTimeout(function () {
-        map.setStyle('mapbox://styles/mapbox/satellite-v9');
-        map.setZoom(3);
-    }, 5000);
-
+    // setTimeout(function () {
+    //     map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    //     map.setZoom(3);
+    // }, 5000);
+    //
 
 
 
