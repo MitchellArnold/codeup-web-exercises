@@ -20,23 +20,34 @@
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-utils.js"></script>
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<script src="js/keys.js"></script>
 <!-- Custom JS -->
+
 <script>
     mapboxgl.accessToken = mapbox_token;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 12,
         center: [-77.0369, 38.9072]
     });
+    var lPopup = new mapboxgl.Popup()
+        .setHTML("<h3>Lincoln Memorial</h3>");
 
     var marker = new mapboxgl.Marker()
         .setLngLat([-77.0502, 38.8893])
+        .setPopup(lPopup)
         .addTo(map);
+
+
+    geocode("600 Navarro St #350, San Antonio, TX 78205", mapbox_token).then(function (result) {
+
+    });
+
 
 </script>
 </body>
@@ -44,15 +55,4 @@
 
 
 
-<!--var popup = new mapboxgl.Popup()-->
-<!--.setLngLat([-98.489615, 29.426827])-->
-<!--.setHTML("<h1>Codeup Rocks!</h1>")-->
-<!--.addTo(map);-->
 
-
-<!--var marker = new mapboxgl.Marker()-->
-<!--.setLngLat([-77.0502, 38.8893])-->
-<!--.addTo(map);-->
-
-
-<!--marker.setPopup(popup)-->
