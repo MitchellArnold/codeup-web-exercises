@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> San Antonio Restaurants </title>
+    <title>First Mapbox Map</title>
     <!-- Mapbox CSS -->
     <script src="js/keys.js"></script>
     <script src="js/mapbox-utils.js"></script>
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<h1>San Antonio Restaurants!</h1>
+<h1>My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
@@ -29,6 +29,34 @@
 <!-- Custom JS -->
 
 <script>
+
+
+    // geocode("600 Navarro St #350, San Antonio, TX 78205", mapbox_token).then(function (result) {
+    //
+    // });
+
+
+    // setTimeout(function () {
+    //     geocode(, mapbox_token).then(function(results) {
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //         console.log(results);
+    //     });
+    // }, 1000);
+    // setTimeout(function () {
+    //     geocode(mitsuwa, mapbox_token).then(function (results) {
+    //         console.log(results);
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //     });
+    // }, 10000);
+    // setTimeout(function () {
+    //     geocode(java_house, mapbox_token).then(function (results) {
+    //         console.log(results);
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //     });
+    // }, 10000);
 
 
     // Start Point
@@ -43,36 +71,38 @@
     // Objects array
     var restaurants = [
         {
-            name: "Mama Margies Mexican Restaurant",
-            address: "9950, I-10, San Antonio, TX 78230",
-            // image: <img src= ""
+            name: "Perini Ranch",
+            address: "3002 FM 89, Buffalo Gap, TX",
+            // loc: [-99.84393, 32.27188]
         },
         {
-            name: "Fuddruckers",
-            address: "9845 I-10, San Antonio, TX 78230",
-            // image:
+            name: "Mitsuwa Marketplace",
+            address: "100 Legacy Drive, Plano,TX",
+            // loc: [-96.69365, 33.06097]
         },
         {
-            name: "Samurai Sushi Restaurant",
-            address: "2320 Babcock Rd, San Antonio, TX 78229",
-            // image:
+            name: "Nairobi Java House",
+            address: "Yaya Centre, Kenya",
+            // loc: [37.85, 0.4]
         }
     ];
     //
 
     // Loop pass through
     restaurants.forEach(function (restaurant) {
-        // console.log(restaurant.address);
+        console.log(restaurant.address);
         var street = restaurant.address;
 
+
         // Display map
+        setTimeout(function () {
             geocode(street, mapbox_token).then(function (results) {
-                // console.log(results);
+                console.log(results);
                 map.setCenter(results);
                 // Popup comment
                 var pop = new mapboxgl.Popup()
                     .setHTML(restaurant.name);
-                // more info**
+                // more info
 
                 // console.log(restaurant.name);
                 //
@@ -83,6 +113,9 @@
                     .addTo(map);
 
             });
+        }, 4000);
+
+
     });
 
 
