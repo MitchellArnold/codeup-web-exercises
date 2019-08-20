@@ -41,12 +41,13 @@
     //
     // });
 
-
+    setTimeout(function () {
     geocode("Whitefish, Montana", mapbox_token).then(function(results) {
         console.log(results);
-        map.setCenter(results);
-        map.setZoom(10);
+        map.flyTo({center: results, zoom: 12, speed: .5})
     });
+    }, 10000);
+
 
     var accessToken = mapbox_token;
     mapboxgl.accessToken = accessToken;
@@ -59,6 +60,7 @@
 
     reverseGeocode({lng: -157.8060, lat: 21.2620}, accessToken).then(function(results) {
         console.log(results);
+
 
      })
 

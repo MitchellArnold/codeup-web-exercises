@@ -1,0 +1,174 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-utils.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+
+<script>
+
+
+    // geocode("600 Navarro St #350, San Antonio, TX 78205", mapbox_token).then(function (result) {
+    //
+    // });
+
+
+    // setTimeout(function () {
+    //     geocode(, mapbox_token).then(function(results) {
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //         console.log(results);
+    //     });
+    // }, 1000);
+    // setTimeout(function () {
+    //     geocode(mitsuwa, mapbox_token).then(function (results) {
+    //         console.log(results);
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //     });
+    // }, 10000);
+    // setTimeout(function () {
+    //     geocode(java_house, mapbox_token).then(function (results) {
+    //         console.log(results);
+    //         map.setCenter(results);
+    //         map.setZoom(13);
+    //     });
+    // }, 10000);
+
+
+    // Start Point
+    mapboxgl.accessToken = mapbox_token;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 12,
+        center: [-98.4916, 29.4252]
+    });
+
+    // Objects array
+    var restaurants = [
+        {
+            name: "Perini Ranch",
+            address: "3002 FM 89, Buffalo Gap, TX",
+            // loc: [-99.84393, 32.27188]
+        },
+        {
+            name: "Mitsuwa Marketplace",
+            address: "100 Legacy Drive, Plano,TX",
+            // loc: [-96.69365, 33.06097]
+        },
+        {
+            name: "Nairobi Java House",
+            address: "Yaya Centre, Kenya",
+            // loc: [37.85, 0.4]
+        }
+    ];
+    //
+
+    // Loop pass through
+    restaurants.forEach(function (restaurant) {
+        console.log(restaurant.address);
+        var street = restaurant.address;
+
+
+        // Display map
+        setTimeout(function () {
+            geocode(street, mapbox_token).then(function (results) {
+                console.log(results);
+                map.setCenter(results);
+                // Popup comment
+                var pop = new mapboxgl.Popup()
+                    .setHTML(restaurant.name);
+                // more info
+
+                // console.log(restaurant.name);
+                //
+                // Geo Marker
+                var mark = new mapboxgl.Marker()
+                    .setLngLat(results)
+                    .setPopup(pop)
+                    .addTo(map);
+
+            });
+        }, 4000);
+
+
+    });
+
+
+    //
+    //
+    // var perini_ranch = "3002 FM 89, Buffalo Gap, TX";
+    // var perini_ranch_mark;
+    // var mitsuwa = "100 Legacy Drive, Plano,TX";
+    // var mitsuwa_mark;
+    // var java_house = "Yaya Centre, Kenya";
+    // var java_house_mark;
+    //
+
+    //
+
+    //
+    // var restaurants = [
+    //     {
+    //         perini_ranch: new mapboxgl.Popup()
+    //             .setHTML("<h3>Perini Ranch Steakhouse</h3>"),
+    //
+    //         perini_ranch_mark: new mapboxgl.Marker()
+    //             .setLngLat([-99.83254, 32.28802])
+    //             .setPopup(perini_ranch)
+    //             .addTo(map)
+    //     },
+    //     {
+    //
+    //         mitsuwa: new mapboxgl.Popup()
+    //             .setHTML("<h3>Perini Ranch Steakhouse</h3>"),
+    //
+    //         mitsuwa_mark: new mapboxgl.Marker()
+    //             .setLngLat([-99.83254, 32.28802])
+    //             .setPopup(mitsuwa)
+    //             .addTo(map)
+    //     },
+    //     {
+    //
+    //         java_house: new mapboxgl.Popup()
+    //             .setHTML("<h3>Perini Ranch Steakhouse</h3>"),
+    //
+    //         java_house_mark: new mapboxgl.Marker()
+    //             .setLngLat([-99.83254, 32.28802])
+    //             .setPopup(java_house)
+    //             .addTo(map)
+    //     }
+    // ];
+
+
+</script>
+</body>
+</html>
+
+
+
+
