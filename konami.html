@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+
+<style>
+    * {
+        border: 1px solid black;
+        margin: 2em;
+    }
+
+    html {
+        margin: 2px;
+        background: darkgrey;
+        color: lightgrey;
+    }
+    header {
+        margin: auto;
+        width: 50%;
+        color:
+    }
+
+    #wrapper {
+         margin: auto;
+         width: 50%;
+     }
+
+    #wrapper #text1 {
+        margin: auto;
+        width: 50%;
+        background: lightslategray;
+    }
+
+
+
+</style>
+<body>
+<header>
+<h1>Konami Code</h1>
+</header>
+<script src="js/jQuery/jquery-2.2.4.js"></script>
+<!--wrapper start-->
+<div id="wrapper">
+<form id="text1">
+<input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+
+    <main id="main-out">
+    <p> Sample output text </p>
+    </main>
+
+    <script>
+    "use strict";
+
+
+    ////      Controller Setup: (Xbox Style == keyboard style "WASD") // loosely equals for good reason
+    //                Y
+    //              X   B
+    //                A
+    //
+    //                W
+    //              A   D
+    //                S
+
+    $(document).keyup(function (event) {
+       if(event.keyCode === 38){
+           console.log("You pressed up.")
+           $('main-out').click(function () {
+               $('main-out').css('color', 'purple')
+           }) ;
+       }else if(event.keyCode === 40){
+           console.log("You pressed down.")
+       }else if(event.keyCode === 37){
+           console.log("You pressed left.")
+       }else if(event.keyCode === 39){
+           console.log("You pressed right.")
+       }else if(event.keyCode === 32){
+           console.log("You pressed spacebar.")
+       }else if(event.keyCode === 83){
+           console.log("You pressed A.")
+       }else if(event.keyCode === 68){
+           console.log("You pressed B.")
+       }else if(event.keyCode === 87){
+           console.log("You pressed Y.")
+       }else if(event.keyCode === 65){
+           console.log("You pressed X.")
+       }
+
+
+
+
+
+
+
+
+    });
+
+
+</script>
+</div>
+<!--end of wrapper-->
+</body>
+</html>
