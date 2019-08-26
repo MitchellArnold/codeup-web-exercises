@@ -1,8 +1,20 @@
 "use strict";
 $(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
-    $('body').css('box-sizing','borer-box').css('border', '2px solid black').css('opacity', '.9').css('background-image', 'linear-gradient(darkgrey,white)');
-    $('div').css('box-sizing','borer-box').css('border', '2px solid black');
-    $('#header').css('font-size', '50px').css('color', 'lightgrey').css('align', 'left');
-    $('main').css('opacity', '.7')
+    // $('li','h1','p').css('font-size', '20px').css('font-size', '20px').html();alert("<h1> Welcome to <br>the main page.</h1>");
+
+    $('h1').click(function () {
+       $('h1').css('background', 'darkgrey')
+    })
+
+    $('p').dblclick(function () {
+        $('p').css('font-size', '18px')
+    })
+
+    $('li').hover(
+        function () {
+        $(this).css('color', 'red')
+    },
+        function () {
+            $(this).css('color', 'black')
+        })
 });
