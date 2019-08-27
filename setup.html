@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+        border: 2px solid black;
+
+    }
+    body {
+        margin: auto;
+        background: darkgrey;
+        color: lightgrey;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+    #wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+
+
+    </style>
+
+
+</head>
+<body>
+<header>
+    <h1> Main Event </h1>
+</header>
+<div id="wrapper">
+    <p> Test Content </p>
+
+</div>
+
+
+
+
+
+<script>
+    "use strict";
+
+    // JS
+    function posTestRun(input) {
+        return input > 0;
+    }
+
+
+    // jQuery
+    $(document).ready(function() {
+        $('p').click(function () {
+            $('p').css('background', 'purple')
+        })
+
+        // $('p').dblclick(function () {
+        //     $('p').css('font-size', '18px')
+        // })
+        //
+        // $('li').hover(
+        //     function () {
+        //         $(this).css('color', 'red')
+        //     },
+        //     function () {
+        //         $(this).css('color', 'black')
+        //     })
+    });
+
+
+
+</script>
+
+
+<script src="/js/jQuery/jquery-2.2.4.js"></script>
+</body>
+</html>
