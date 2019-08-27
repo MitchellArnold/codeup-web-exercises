@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> jQuery </title>
+    <script src = "js/jQuery/jquery-2.2.4.js"></script>
+<style>
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    #facts{
+        /*justify-content: flex-end;*/
+        margin-left: auto;
+        background: green;
+        opacity: .9;
+    }
+
+    .invisible {
+        visibility: hidden;
+    }
+
+    .highlighted {
+        background-color: #FF0;
+    }
+
+
+</style>
+
+</head>
+<body>
+<header>
+<h1> National Park Facts </h1>
+<button id="facts"> List cool facts! </button>
+</header>
+<hr>
+<dl>
+    <dt><h3>Guadalupe Mountains National Park</h3></dt>
+    <dd>- Protects the world's most extensive Permian fossil reef, the four highest peaks in Texas, an environmentally
+        diverse collection of flora and fauna, and the stories of lives shaped through conflict, cooperation and
+        survival.
+    </dd>
+    <dd>- Over 80 miles of hiking trails offer easy nature walks through desert flora; more moderate hikes follow
+        canyons
+        and reach riparian oases, and strenuous all day hikes can take you into high country forest or to the "Top of
+        Texas".
+    </dd>
+    <dd>
+        <h4>Guadalupe Trails</h4>
+        <ul>
+            <li>Devil's Hall Trail
+                The Devil's Hall Trail departs from the Pine Springs Trailhead and is 3.8 miles round-trip.
+            </li>
+            <li>Smith Spring Loop
+                The Smith Spring Trail is 2.3 miles (round-trip) and departs from the Frijole Ranch Trailhead. Watch the
+                landscape change from desert scrub to riparian vegetation in this loop.
+            </li>
+            <li>McKittrick Canyon Trail
+                Hike through riparian vegetation and stream crossings to the historic Pratt Cabin or the scenic Grotto.
+                McKittrick Canyon is a moderate hike that follows the bottom of the canyon and begins to climb after 3
+                miles, eventually connecting you to McKittrick Ridge.
+            </li>
+        </ul>
+    </dd>
+    <hr>
+    <dt><h3>Big Bend</h3></dt>
+    <dd>- There is a place in Far West Texas where night skies are dark as coal and rivers carve temple-like canyons in
+        ancient limestone. Here, at the end of the road, hundreds of bird species take refuge in a solitary mountain
+        range surrounded by weather-beaten desert. Tenacious cactus bloom in sublime southwestern sun, and diversity of
+        species is the best in the country.
+    </dd>
+    <dd>- The Ross Maxwell Scenic Drive will give you fantastic views of the Chihuahuan Desert landscape and will lead
+        you to the Rio Grande. There are scenic overlooks and exhibits along the way, and the short walks to Sam Nail
+        Ranch and Homer Wilson Ranch and a visit to the Castolon Historic District will give you a glimpse into Big
+        Bend’s past.
+    </dd>
+    <dd>- A highlight of the trip is the short walk into Santa Elena Canyon—one of Big Bend’s most scenic spots. Drive 8
+        miles west from Castolon to the end of the road. You may return to the main road by returning on the Ross
+        Maxwell Drive or on the Old Maverick Road, a 13-mile gravel road linking the Ross Maxwell Drive to the Maverick
+        Entrance. Be sure to check on road con­ditions first.
+    </dd>
+    <dd>- Ernst Tinaja is a popular destination on the southern end of the Old Ore Road that can be reached with a
+        high-clearance vehicle.
+    </dd>
+    <hr>
+    <dt><h3>Big Thicket National Preserve</h3></dt>
+    <dd>- Approximately 40 miles of trails wind through Big Thicket National Preserve, providing hikers many options for
+        walking distances and experiences. Trails of varying lengths, from 0.3 miles to 18 miles round-trip, lead
+        through diverse plant communities, from bogs of carnivorous plants to stands of towering longleaf pines.
+        Regardless of the trail you choose, remember to go slowly and enjoy the smells, the sounds, and the small
+        wonders of the Big Thicket.
+    </dd>
+    <dd>
+        <h4> Interests </h4>
+        <ul>
+            <li>Carnivorous Plants: Sundew Trail, Pitcher Plant Trail</li>
+
+            <li>Longleaf Pine Trees: Sundew Trail, Pitcher Plant Trail, Sandhill Loop Trail</li>
+
+            <li>Cypress Sloughs: Beaver Slide Trail, Cypress Loop of the Kirby Nature Trail</li>
+
+            <li>Wildflowers: Sundew Trail</li>
+
+            <li> Birds: Sundew Trail, Kirby Nature Trail, Headquarters area</li>
+
+            <li> Mushrooms: Kirby Nature Trail, Woodlands Trail</li>
+
+            <li> Biodiversity: Kirby Nature Trail, Turkey Creek Trail, Big Sandy Trail</li>
+        </ul>
+    </dd>
+    <dd>
+        <h4> Activities</h4>
+        <ul>
+            <li> Backpacking: Turkey Creek Trail, Big Sandy Trail</li>
+
+            <li> Biking: Big Sandy Trail (This is the ONLY trail open to</li>
+            biking.)
+
+            <li> Fishing: Village Creek via the Kirby Nature Trail; Birdwatchers Trail</li>
+        </ul>
+    </dd>
+</dl>
+
+
+<script>
+    "use strict";
+
+
+
+    // $(document).ready(function() {
+    //     $('facts').click(function (event) {
+    //         event.preventDefault();
+    //         $('facts').toggleClass('invisible');
+    //     })
+    // });
+        $(document).ready(function() {
+            $('#facts').click(function () {
+                $('dd').toggleClass('invisible');
+            })
+            $('dt').click(function (event) {
+                $(this).css('color', 'yellow');
+            })
+            });
+
+
+
+</script>
+</body>
+</html>
