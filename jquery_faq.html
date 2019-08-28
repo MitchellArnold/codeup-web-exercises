@@ -33,10 +33,18 @@
 
 </head>
 <body>
+
+
 <header>
     <h1> National Park Facts </h1>
     <button id="facts"> List cool facts!</button>
 </header>
+<hr>
+<div id="top">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <h3> Would you like to register for the site?</h3>
+    <span> x </span>
+</div>
 <hr>
 <dl>
     <dt><h3>Guadalupe Mountains National Park</h3></dt>
@@ -155,19 +163,23 @@
 </div>
 
 
-<div id="pic1" style="background-image: ">
-    <button> Click</button>
-</div>
+<!--<div id="pic1" style="background-image: ">-->
+<!--    <button> Click</button>-->
+<!--</div>-->
 
-<div id="pic2">
-    <button> Click</button>
+<!--<div id="pic2">-->
+<!--    <button> Click</button>-->
 
-</div>
+<!--</div>-->
 
-<div id="pic3">
-    <button> Click</button>
+<!--<div id="pic3">-->
+<!--    <button> Click</button>-->
 
-</div>
+<!--</div>-->
+
+
+
+
 
 <script>
     "use strict";
@@ -196,7 +208,7 @@
 
         $('#cool').click(function () {
             $('ul').each(function (index) {
-                    $(this).children().last().css('background', 'yellow');
+                $(this).children().last().css('background', 'yellow');
             })
         });
 
@@ -205,7 +217,25 @@
         });
         $('li').click(function () {
             $(this).parent().children().first().css('color', 'blue');
+        });
+
+        $('div').click(function () {
+            $('span').parent().hide();  /// targets the parent of span, or div that contains it
+            console.log("div was hidden.");
         })
+
+        $('#bottom').children('ul').hide(); /// targets the bottom "practice area" and hides the ul children upon page load
+
+        $('#bottom').children('h3').click(function () {
+            $('ul').slideToggle();
+            console.log("List is shown");
+        })
+
+        $('#top').children('h3').hide().delay(2000).fadeIn();
+
+
+
+
     });
 
 
