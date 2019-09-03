@@ -29,11 +29,14 @@
         align-items: center;
         font-size: 2em;
     }
+    #wrapper p {
+        font-size: 32px;
+    }
 
 
     </style>
-
-
+    <script src="js/jQuery/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -47,44 +50,96 @@
 
 
 
-
 <script>
     "use strict";
 
-    // JS
-    // function removeVowels(input){
-    //     var tempArray = 0;
-    //     var strArray = input.toLowerCase().split('');
-    //     var blank = [];
-    //     for (var i = 0; i < strArray.length; i++){
-    //         if(isVowel(strArray[i] === false)){
-    //             blank += strArray;
-    //             console.log(blank);
-    //         }
-    //     }
-    // }
-    var input = 'start';
-    var strArray = input.toLowerCase().split('');
-    var blank = [];
-    for (var i = 0; i < strArray.length; i++) {
-        if (isVowel(strArray[i] === false)) {
-            blank += strArray;
-            console.log(blank);
+
+$(document).ready(function () {
+
+    var climateIconArray = [
+        {
+            title: "clearday",
+            source: 'icon/climacons-master/SVG/Sun.svg'
+        },
+        {
+            title: "clearnight",
+            source: 'icon/climacons-master/SVG/Moon.svg'
+        },
+        {
+            title: "rain",
+            source: 'icon/climacons-master/SVG/Cloud-Rain.svg'
+        },
+        {
+            title: "snow",
+            source: 'icon/climacons-master/SVG/Cloud-Snow.svg'
+        },
+        {
+            title: "sleet",
+            source: 'icon/climacons-master/SVG/Cloud-Drizzle.svg'
+        },
+        {
+            title: "wind",
+            source: 'icon/climacons-master/SVG/Cloud-Wind.svg'
+        },
+        {
+            title: "fog",
+            source: 'icon/climacons-master/SVG/Cloud-Fog.svg'
+        },
+        {
+            title: "cloudly",
+            source: 'icon/climacons-master/SVG/Cloud.svg'
+        },
+        {
+            title: "partlycloudyday",
+            source: ''
+        },
+        {
+            title: "partlycloudlynight",
+            source: ''
         }
-    }
+    ];
 
 
+    $('#wrapper').children('p').html();
 
-    // jQuery
-    $(document).ready(function() {
-       $('#wrapper').children('p').html('Overwrite')
-    });
+});
 
 
 
 </script>
 
-
-<script src="/js/jQuery/jquery-2.2.4.js"></script>
 </body>
 </html>
+
+
+<!--notes-->
+
+
+<!--// JS-->
+<!--// function removeVowels(input){-->
+<!--//     var tempArray = 0;-->
+<!--//     var strArray = input.toLowerCase().split('');-->
+<!--//     var blank = [];-->
+<!--//     for (var i = 0; i < strArray.length; i++){-->
+<!--//         if(isVowel(strArray[i] === false)){-->
+<!--//             blank += strArray;-->
+<!--//             console.log(blank);-->
+<!--//         }-->
+<!--//     }-->
+<!--// }-->
+<!--// var input = 'start';-->
+<!--// var strArray = input.toLowerCase().split('');-->
+<!--// var blank = [];-->
+<!--// for (var i = 0; i < strArray.length; i++) {-->
+<!--//     if (isVowel(strArray[i] === false)) {-->
+<!--//         blank += strArray;-->
+<!--//         console.log(blank);-->
+<!--//     }-->
+<!--// }-->
+
+
+
+<!--// jQuery-->
+<!--// $(document).ready(function() {-->
+<!--//    $('#wrapper').children('p').html('Overwrite')-->
+<!--// });-->

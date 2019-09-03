@@ -14,22 +14,26 @@
 
 <!------------ Mapbox JS ------------>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 
 <!-------------- Keys --------------->
     <script src="js/keys.js"></script>
 
 <!------------- Styling ------------->
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        /** {*/
+        /*    box-sizing: border-box;*/
+        /*}*/
 
         body {
-            padding: 2em;
+            padding: 1em;
             display: flex;
             flex-direction: column;
             background: lightgrey;
             color: lightslategray;
+            /*width: 500px;*/
+            /*height: 800px;*/
         }
 
         h1 {
@@ -80,9 +84,12 @@
         }
 
         #map {
-
-            height: 75%;
-            width:75%;
+            padding: 2em;
+            position: relative;
+            /*height: 75%;*/
+            /*width:75%;*/
+            height: 350px;
+            /*width: 400px;*/
             /*box-shadow: 10px 10px;*/
         }
     </style>
@@ -97,100 +104,143 @@
     <main>
         <!-- weatherRun content-->
     </main>
-
 </div>
 
-
-<!------------------------/// Start of WeatherMap load ///--------------------->
-<script>
-
-// function dragMarker() {
-
-
-    var darkskyData;
-
-    // Weather forecast function
-    function weatherRun() {
-        var display = "";
-
-        for (var i = 0; i <= 2; i++) { // 3 day forecast
-            console.log(darkskyData.daily.data[i]);
-
-            display += "";
-            display += "<div id='daily-forecast' >";
-            display += "<p><strong>Clouds:</strong></p>";
-            display += "<p>" + darkskyData.daily.data[i].summary + "</p>";
-            display += "<p><strong>Humidity:</strong></p>";
-            display += "<p>" + darkskyData.daily.data[i].humidity + "</p>";
-            display += "<p><strong>Wind:</strong></p>";
-            display += "<p>" + darkskyData.daily.data[i].windSpeed + "</p>";
-            display += "<p><strong>Pressure:</strong></p>";
-            display += "<p>" + darkskyData.daily.data[i].pressure + "</p>";
-            display += "</div>"
-
-        }
-        return display;
-    } /// end of for loop
-
-// };
-
-// dragMarker;
-
-    $(document).ready(function () {
-        /// WeatherMap site
-        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function (data) {
-            // console.log(data);
-
-            /// Units conversion   << --- lookup
-            // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936?units=si").done(function(data) {
-            //     console.log(data); // si is the equivalent to metric units
-            // });
-
-            /// Time conversion
-            var dateObject = new Date(1551736889 * 1000);
-            console.log(dateObject.toString());
-
-            darkskyData = data;
-
-
-
-            weatherRun();
-
-
-
-            ///  Inject HTML content
-            // $('#wrapper').html(weatherRun());
-
-
-
-
-            //// Array Object
-            var forecastArray = 0;
-
-            // data.forEach(function (object) {
-            // display += "<p>" + data.currently.summary + "</p>";
-            // display += "<p>" + data.currently.humidity + "</p>";
-            // display += "<p>" + data.currently.windSpeed + "</p>";
-            // display += "<p>" + data.currently.pressure + "</p>";
-
-            // });
-
-
-
-        }).always(function() {
-            $('#wrapper').children('main').html(weatherRun());
-        }); /// end of DarkSky
-    }); /// end of ready function
-</script>
-
-
-<!-----------------------------------MapBox----------------------------------->
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 <div id='map'></div>
 
 
 
+<!------------------------/// Start of WeatherMap load ///--------------------->
+<script>
+    "use strict";
+    /// Run content
+    $(document).ready(function () {
+
+
+// Weather forecast function
+        var darkskyData;
+
+        function weatherRun() {
+            var display = "";
+
+            for (var i = 0; i <= 2; i++) { // 3 day forecast
+                // console.log(darkskyData.daily.data[i]);
+
+                display += "";
+                display += "<div id='daily-forecast' >";
+                display += "<p><strong>Clouds:</strong></p>";
+                display += "<p>" + darkskyData.daily.data[i].summary + "</p>";
+                display += "<p><strong>Humidity:</strong></p>";
+                display += "<p>" + darkskyData.daily.data[i].humidity + "</p>";
+                display += "<p><strong>Wind:</strong></p>";
+                display += "<p>" + darkskyData.daily.data[i].windSpeed + "</p>";
+                display += "<p><strong>Pressure:</strong></p>";
+                display += "<p>" + darkskyData.daily.data[i].pressure + "</p>";
+                display += "</div>"
+
+            }
+            return display;
+        } /// end of for loop
+
+
+
+
+
+            // function dragMarker() {
+
+
+        //// Array Object
+        var climateIconArray = [
+            {
+                title: "clearday",
+                source: 'icon/climacons-master/SVG/Sun.svg'
+            },
+            {
+                title: "clearnight",
+                source: 'icon/climacons-master/SVG/Moon.svg'
+            },
+            {
+                title: "rain",
+                source: 'icon/climacons-master/SVG/Cloud-Rain.svg'
+            },
+            {
+                title: "snow",
+                source: 'icon/climacons-master/SVG/Cloud-Snow.svg'
+            },
+            {
+                title: "sleet",
+                source: 'icon/climacons-master/SVG/Cloud-Drizzle.svg'
+            },
+            {
+                title: "wind",
+                source: 'icon/climacons-master/SVG/Cloud-Wind.svg'
+            },
+            {
+                title: "fog",
+                source: 'icon/climacons-master/SVG/Cloud-Fog.svg'
+            },
+            {
+                title: "cloudly",
+                source: 'icon/climacons-master/SVG/Cloud.svg'
+            },
+            {
+                title: "partlycloudyday",
+                source: ''
+            },
+            {
+                title: "partlycloudlynight",
+                source: ''
+            }
+        ];
+
+        console.log(climateIconArray);
+
+
+            function iconOut() {
+                for (var i = 0; i < climateIconArray.length; i++) {
+                    // console.log(climateIconArray[i]);
+                    $('main').html(climateIconArray.title[0]);
+                }
+            }
+                iconOut();
+// };
+
+// dragMarker;
+
+
+            /// WeatherMap site
+            $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function (data) {
+                // console.log(data);
+
+                /// Units conversion   << --- lookup
+                // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936?units=si").done(function(data) {
+                //     console.log(data); // si is the equivalent to metric units
+                // });
+
+                /// Time conversion
+                var dateObject = new Date(1551736889 * 1000);
+                console.log(dateObject.toString());
+
+
+
+                ///  Inject HTML content
+                // $('#wrapper').html(weatherRun());
+
+                darkskyData = data;
+                weatherRun();
+
+
+            }).always(function () {
+                $('#wrapper').children('main').html(weatherRun());
+            }); /// end of DarkSky
+        }); /// end of ready function
+</script>
+
+
+
+
+
+<!-------------------MapBox------------------->
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFybm9sZDkwIiwiYSI6ImNqemloYzI5NDE1dGgzY3BpNmUzMG5xZWkifQ.OAdTxO3ZKbcL92rtDrRezg';
     var map = new mapboxgl.Map({
@@ -239,6 +289,17 @@
 
 <!---------------------FOR LOOP FULL CHECK--------------------->
 <!--for (var i = 0; i < darkskyData.daily.data.length; i++)-->
+
+
+
+
+<!--// data.forEach(function (object) {-->
+<!--// display += "<p>" + data.currently.summary + "</p>";-->
+<!--// display += "<p>" + data.currently.humidity + "</p>";-->
+<!--// display += "<p>" + data.currently.windSpeed + "</p>";-->
+<!--// display += "<p>" + data.currently.pressure + "</p>";-->
+
+<!--// });-->
 
 
 
