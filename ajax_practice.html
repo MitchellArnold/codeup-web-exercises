@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Practice</title>
+    <script src="js/jQuery/jquery-2.2.4.js"></script>
+</head>
+<body>
+
+
+<script>
+    "use strict";
+
+    // $.ajax("https://swapi.co/api/films").done(function (data) {
+    //     console.log(data.results[0]);
+    // });
+        // , {
+//     type: "GET",
+//     data: {
+//         results[0];
+//     }
+//
+//     console.log("Data returned from server:");
+//     console.log(data);
+// });
+
+// console.log();
+//     $.ajax("https://swapi.co/api/films").done(function (data) {
+//
+//         $.post('https://hookbin.com/Z2Oe00Da3zs7q7eYrMyz', {
+//             first_name: "Mitchell",
+//             last_name: "Arnold",
+//             city: "San Antonio",
+//             state: "Texas"
+//         }).done(function (data) {
+//         })
+//     });
+
+    $.ajax({
+        type: "POST",
+        url: "https://hookbin.com/Z2Oe00Da3zs7q7eYrMyz",
+        data: JSON.stringify({
+            "first_name": "John",
+            "last_name": "McArthur",
+            "city": "San Antonio",
+            "state": "Texas"
+        }),
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            console.log("done then run");
+        }
+    });
+</script>
+
+
+</body>
+</html>

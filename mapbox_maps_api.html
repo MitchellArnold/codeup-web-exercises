@@ -41,49 +41,49 @@
     });
 
     // Objects array
-    var restaurants = [
-        {
-            name: "Mama Margies Mexican Restaurant",
-            address: "9950, I-10, San Antonio, TX 78230",
-            // image: <img src= ""
-        },
-        {
-            name: "Fuddruckers",
-            address: "9845 I-10, San Antonio, TX 78230",
-            // image:
-        },
-        {
-            name: "Samurai Sushi Restaurant",
-            address: "2320 Babcock Rd, San Antonio, TX 78229",
-            // image:
-        }
-    ];
+    // var restaurants = [
+    //     {
+    //         name: "Mama Margies Mexican Restaurant",
+    //         address: "9950, I-10, San Antonio, TX 78230",
+    //         // image: <img src= ""
+    //     },
+    //     {
+    //         name: "Fuddruckers",
+    //         address: "9845 I-10, San Antonio, TX 78230",
+    //         // image:
+    //     },
+    //     {
+    //         name: "Samurai Sushi Restaurant",
+    //         address: "2320 Babcock Rd, San Antonio, TX 78229",
+    //         // image:
+    //     }
+    // ];
     //
 
     // Loop pass through
-    restaurants.forEach(function (restaurant) {
-        // console.log(restaurant.address);
-        var street = restaurant.address;
-
-        // Display map
-            geocode(street, mapbox_token).then(function (results) {
-                // console.log(results);
-                map.setCenter(results);
-                // Popup comment
-                var pop = new mapboxgl.Popup()
-                    .setHTML(restaurant.name);
-
-
-                // console.log(restaurant.name);
-                //
-                // Geo Marker
-                var mark = new mapboxgl.Marker()
-                    .setLngLat(results)
-                    .setPopup(pop)
-                    .addTo(map);
-
-            });
-    });
+    // restaurants.forEach(function (restaurant) {
+    //     // console.log(restaurant.address);
+    //     var street = restaurant.address;
+    //
+    //     // Display map
+    //         geocode(street, mapbox_token).then(function (results) {
+    //             // console.log(results);
+    //             map.setCenter(results);
+    //             // Popup comment
+    //             var pop = new mapboxgl.Popup()
+    //                 .setHTML(restaurant.name);
+    //
+    //
+    //             // console.log(restaurant.name);
+    //             //
+    //             // Geo Marker
+    //             var mark = new mapboxgl.Marker()
+    //                 .setLngLat(results)
+    //                 .setPopup(pop)
+    //                 .addTo(map);
+    //
+    //         });
+    // });
 
 
     //

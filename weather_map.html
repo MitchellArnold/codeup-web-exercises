@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeatherMap API</title>
+
+<!--------------Scripts-------------->
+    <script src="js/jQuery/jquery-2.2.4.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src="js/mapbox-utils.js"></script>
+
+<!------------ Mapbox JS ------------>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-------------- Keys --------------->
+    <script src="js/keys.js"></script>
+
+<!------------- Styling ------------->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            background: lightgrey;
+            color: lightslategray;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #A5D4F8;
+            /*border: 2px solid grey;*/
+        }
+
+        #wrapper div {
+            display: flex;
+            flex-basis: 100%;
+            background: #EFEFEF;
+            /*padding: .5em;*/
+            border: 1px solid slategrey;
+        }
+
+        #wrapper p {
+            margin: 0;
+
+            /*border: 2px solid slategrey;*/
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: 2em;
+        }
+
+        #daily-forecast{
+            font-size: 12px;
+            flex-direction: column;
+            align-items: stretch;
+            height: 12em;
+
+        }
+
+        #daily-forecast p {
+            font-size: 12px;
+            display: flex;
+            flex-direction: row;
+            flex-grow: inherit;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+
+            /*box-shadow: 10px 10px;*/
+        }
+    </style>
+</head>
+<!-----------------------------insertion content----------------------------->
+<body>
+<div id="wrapper">
+    <header>
+    <h1>Weather App</h1>
+    <h3 style="margin-left: 2em;">San Antonio</h3>
+    </header>
+    <main>
+        <!-- weatherRun content-->
+    </main>
+
+</div>
+<div id='map'></div>
+go
+
+<!------------------------/// Start of WeatherMap load ///--------------------->
+<script>
+    var darkskyData;
+
+    // Weather function
+    function weatherRun(){
+        var display = "";
+
+        for (var i = 0; i <= 2; i++) { // 3 day forecast
+            console.log(darkskyData.daily.data[i]);
+
+            display += "";
+            display += "<div id='daily-forecast' >";
+            display += "<p><strong>Clouds:</strong></p>";
+            display += "<p>" + darkskyData.daily.data[i].summary + "</p>";
+            display += "<p><strong>Humidity:</strong></p>";
+            display += "<p>" + darkskyData.daily.data[i].humidity + "</p>";
+            display += "<p><strong>Wind:</strong></p>";
+            display += "<p>" + darkskyData.daily.data[i].windSpeed + "</p>";
+            display += "<p><strong>Pressure:</strong></p>";
+            display += "<p>" + darkskyData.daily.data[i].pressure + "</p>";
+            display += "</div>"
+
+        }
+        return display;
+    } /// end of for loop
+
+
+
+    $(document).ready(function () {
+        /// WeatherMap site
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function (data) {
+            // console.log(data);
+
+            /// Units conversion   << --- lookup
+            $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936?units=si").done(function(data) {
+                console.log(data); // si is the equivalent to metric units
+            });
+
+            /// Time conversion
+            var dateObject = new Date(1551736889 * 1000);
+            console.log(dateObject.toString());
+
+            darkskyData = data;
+
+
+
+            weatherRun();
+
+
+
+            ///  Inject HTML content
+            // $('#wrapper').html(weatherRun());
+
+
+
+
+            //// Array Object
+            var forecastArray = 0;
+
+            // data.forEach(function (object) {
+            // display += "<p>" + data.currently.summary + "</p>";
+            // display += "<p>" + data.currently.humidity + "</p>";
+            // display += "<p>" + data.currently.windSpeed + "</p>";
+            // display += "<p>" + data.currently.pressure + "</p>";
+
+            // });
+
+
+
+        }).always(function() {
+            $('#wrapper').children('main').html(weatherRun());
+        }); /// end of DarkSky
+    }); /// end of ready function
+</script>
+
+<!--------------------Map Box JS-------------------->
+<script>
+
+    mapboxgl.accessToken = mapbox_token;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 12,
+        center: [-98.4916, 29.4252]
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!------------------------------------NOTES------------------------------------>
+
+
+
+<!-------------------FIRST ATTEMPT AT FOR LOOP ------------------->
+
+<!--function weatherRun(){-->
+<!--for (var i = 0; i < data.daily.data.length; i++) {-->
+<!--var display = "";-->
+<!--// display += data.daily.data[i];-->
+<!--console.log(data.daily.data[i])-->
+
+<!--display += "<p>" + data.daily.data[i].summary + "</p>";-->
+<!--display += "<p>" + data.daily.data[i].humidity + "</p>";-->
+<!--display += "<p>" + data.daily.data[i].windSpeed + "</p>";-->
+<!--display += "<p>" + data.daily.data[i].pressure + "</p>";-->
+
+<!--}-->
+<!--return display;-->
+<!--}-->
+
+<!---------------------FOR LOOP FULL CHECK--------------------->
+<!--for (var i = 0; i < darkskyData.daily.data.length; i++)-->
+

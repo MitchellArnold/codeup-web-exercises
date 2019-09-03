@@ -14,7 +14,6 @@
         }
 
         #facts {
-            /*justify-content: flex-end;*/
             margin-left: auto;
             background: green;
             opacity: .9;
@@ -34,7 +33,7 @@
 </head>
 <body>
 
-
+<!--------------------------------top of page-------------------------------->
 <header>
     <h1> National Park Facts </h1>
     <button id="facts"> List cool facts!</button>
@@ -42,7 +41,7 @@
 <hr>
 <div id="top">
     <h1>Would you like to sign up for our newsletter?</h1>
-    <h3> Would you like to register for the site?</h3>
+    <h2> Would you like to register for the site?</h2>
     <span> x </span>
 </div>
 <hr>
@@ -134,7 +133,7 @@
 </dl>
 
 <hr>
-
+<!-------------------------------play content------------------------------->
 <button id="cool"> Cool fact click</button>
 <div id="bottom">
     <h3>Guadalupe National Park</h3>
@@ -206,32 +205,46 @@
         //         }
         //     })
 
+
+        /////////////////// Traversing Exercise //////////////////////
+
+        /// Question #3
         $('#cool').click(function () {
             $('ul').each(function (index) {
                 $(this).children().last().css('background', 'yellow');
             })
         });
 
+        /// Question #4
         $('#bottom').children('h3').click(function () {
             $(this).next().children().css('font-weight', 'bold');
         });
+
+        /// Question #5
         $('li').click(function () {
             $(this).parent().children().first().css('color', 'blue');
         });
 
+        //////////////////// Effects Exercise ////////////////////////
+
+        /// Question #1
         $('div').click(function () {
-            $('span').parent().hide();  /// targets the parent of span, or div that contains it
+            $('span').parent().hide();  /// targets the parent of span,
+                                        // or div that contains it.
             console.log("div was hidden.");
-        })
+        });
+        $('#bottom').children('ul').hide(); /// targets the bottom
+                                            // "practice area" and hides
+                                            // the ul children upon page load.
 
-        $('#bottom').children('ul').hide(); /// targets the bottom "practice area" and hides the ul children upon page load
-
+        /// Question #2
         $('#bottom').children('h3').click(function () {
             $('ul').slideToggle();
             console.log("List is shown");
-        })
+        });
 
-        $('#top').children('h3').hide().delay(2000).fadeIn();
+        /// Question #3
+        $('#top').children('h2').hide().delay(8000).fadeIn();
 
 
 
