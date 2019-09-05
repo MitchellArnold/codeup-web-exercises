@@ -27,6 +27,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         font-size: 2em;
     }
     #wrapper p {
@@ -40,11 +41,13 @@
 </head>
 <body>
 <header>
-    <h1> Main Event </h1>
+    <h1 id="top-header"> Main Event </h1>
 </header>
 <div id="wrapper">
-    <p> Test Content </p>
-
+    <div>
+    <p id="button-out"> Test Content </p>
+    </div>
+<button id="button-one">Button One</button>
 </div>
 
 
@@ -53,54 +56,23 @@
 <script>
     "use strict";
 
-
 $(document).ready(function () {
 
-    var climateIconArray = [
-        {
-            title: "clearday",
-            source: 'icon/climacons-master/SVG/Sun.svg'
-        },
-        {
-            title: "clearnight",
-            source: 'icon/climacons-master/SVG/Moon.svg'
-        },
-        {
-            title: "rain",
-            source: 'icon/climacons-master/SVG/Cloud-Rain.svg'
-        },
-        {
-            title: "snow",
-            source: 'icon/climacons-master/SVG/Cloud-Snow.svg'
-        },
-        {
-            title: "sleet",
-            source: 'icon/climacons-master/SVG/Cloud-Drizzle.svg'
-        },
-        {
-            title: "wind",
-            source: 'icon/climacons-master/SVG/Cloud-Wind.svg'
-        },
-        {
-            title: "fog",
-            source: 'icon/climacons-master/SVG/Cloud-Fog.svg'
-        },
-        {
-            title: "cloudly",
-            source: 'icon/climacons-master/SVG/Cloud.svg'
-        },
-        {
-            title: "partlycloudyday",
-            source: ''
-        },
-        {
-            title: "partlycloudlynight",
-            source: ''
+    /// Button One //  array cycle runner
+    var array = ['string', 1, true, "undefined", "null"];
+    var index = 0;
+    $('#button-one').click(function (){
+        if (index >= array.length) {
+            index = 0;
         }
-    ];
+        $('#button-out').html(array[index]);
+        index += 1;
+    });
 
-
-    $('#wrapper').children('p').html();
+    /// Button Two // header color changer
+    $('#top-header').click(function () {
+        $('#top-header').css('color', 'blue');
+    });
 
 });
 

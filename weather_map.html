@@ -38,6 +38,16 @@
 
         h1 {
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h3 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #wrapper {
@@ -102,6 +112,7 @@
     <h3 style="margin-left: 2em;">San Antonio</h3>
     </header>
     <main>
+        <div id="icons"></div>
         <!-- weatherRun content-->
     </main>
 </div>
@@ -124,10 +135,11 @@
             var display = "";
 
             for (var i = 0; i <= 2; i++) { // 3 day forecast
-                // console.log(darkskyData.daily.data[i]);
-
+                console.log(darkskyData.daily.data[i]);
+                var icon_source = "set icon source loop";
                 display += "";
                 display += "<div id='daily-forecast' >";
+                display += "<p>" + icon_source + "</p>";
                 display += "<p><strong>Clouds:</strong></p>";
                 display += "<p>" + darkskyData.daily.data[i].summary + "</p>";
                 display += "<p><strong>Humidity:</strong></p>";
@@ -136,17 +148,19 @@
                 display += "<p>" + darkskyData.daily.data[i].windSpeed + "</p>";
                 display += "<p><strong>Pressure:</strong></p>";
                 display += "<p>" + darkskyData.daily.data[i].pressure + "</p>";
-                display += "</div>"
+                display += "</div>";
 
-            }
+            };
+
+
             return display;
         } /// end of for loop
 
 
+        if(darkskyData.daily.data[i].summary === "Humid and partly cloudy throughout the day." ){
+            return
+        }
 
-
-
-            // function dragMarker() {
 
 
         //// Array Object
@@ -195,17 +209,20 @@
 
         console.log(climateIconArray);
 
-
             function iconOut() {
                 for (var i = 0; i < climateIconArray.length; i++) {
                     // console.log(climateIconArray[i]);
-                    $('main').html(climateIconArray.title[0]);
+                    $('#icons').html('testing');
+                    // $('main').children('#icons').html(climateIconArray[i].source);
                 }
             }
-                iconOut();
-// };
 
-// dragMarker;
+            iconOut();
+
+
+        function dragMarker() {
+
+        }
 
 
             /// WeatherMap site
@@ -254,6 +271,18 @@
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl
     }));
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function (coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    };
 </script>
 
 
