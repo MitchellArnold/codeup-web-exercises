@@ -32,11 +32,11 @@ const users = [
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
 
-const self =   {
-  name: 'mitchell',
-  email: 'mitchell.arnold2019@gmail.com',
-  languages: ['html', 'css', 'javascript']
-};
+// const self =   {
+//   name: 'mitchell',
+//   email: 'mitchell.arnold2019@gmail.com',
+//   languages: ['html', 'css', 'javascript']
+// };
 
 
 // refactor
@@ -71,16 +71,14 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//   return emails.push(user.email);
-// });
-// users.forEach(function(user) {
-//   return names.push(user.name);
-// });
+users.forEach(user  => emails.push(user.email));
+
+users.forEach(user => emails.push(user.name));
 
 
-const eachUserEmail =  (name) => emails.push(user.email);
-const eachUserName = (name) => emails.push(user.name);
+// First usage
+// const eachUserEmail =  (name) => emails.push(user.email);
+// const eachUserName = (name) => emails.push(user.name);
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
@@ -93,10 +91,11 @@ users.forEach(function(user) {
   const languages = user.languages;
 
   // TODO: rewrite the assignment below to use template strings
-  developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  // original content
+  // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  developers.push(`${name}'s email is ${email}  ${name} knows ${languages.join(', ')}`);
 });
 
-developers.push(${name} + '\'s email is ' + ${email} + ${name} + ' knows ' + '${languages.join(', ')}' );
 
 
 
@@ -107,7 +106,7 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 // developers.forEach(function (developer) {
 
-  for (let developer of list) {
+  for (let developer of developers) {
 
 
   // TODO: rewrite the assignment below to use template strings
@@ -115,7 +114,7 @@ let list = '<ul>';
 // });
 // list += '</ul>';
 
-list += '<li>' + ${developer} + '</li>';
-  };
+list += `<li> ${developer} </li>`;
+  }
 list += '</ul>';
 
