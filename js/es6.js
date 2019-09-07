@@ -114,7 +114,7 @@ let list = '<ul>';
 // });
 // list += '</ul>';
 
-list += `<li> ${developer} </li>`;
+list += `<li>${developer}</li>`;
   }
 list += '</ul>';
 
