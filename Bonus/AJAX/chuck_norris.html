@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 50% auto;
+            padding: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #center {
+            padding: 1em;
+        }
+    </style>
+
+    <script src="../../js/jQuery/jquery-2.2.4.js"></script>
+
+</head>
+<body>
+<p>Click here for a random joke >></p>
+<button id="left">Random Joke</button>
+<div id="center"><h1>"Joke Central"</h1></div>
+<button id="right">Random Programming Quote</button>
+<p><< Click here for a random quote</p>
+
+
+<script>
+    "use strict";
+
+    (function () {
+
+        $(document).ready(function () {
+
+    $.get("http://www.icndb.com/api/").done(function(data) {
+        console.log(data);
+    });
+
+
+    $.get("http://quotes.stormconsultancy.co.uk/api").done(function(data) {
+            console.log(data);
+    });
+
+
+        });
+        ///////// end of document ready ///////////
+    })();
+        ///////// end of IIFE ///////////
+
+
+</script>
+
+</body>
+</html>
