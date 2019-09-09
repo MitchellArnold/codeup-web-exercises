@@ -42,46 +42,81 @@ const users = [
 ];
 
 
+
 /// Filter
 const languages = users.filter(function (n) {
     return n.languages.length >= 3;
 });
+
 console.log(languages);
 
 // let language = users[n].language    </// unnecessary when you iterate through with n. With arrays, think taking out from array, checking it, and putting it back if it passes ( .filter ), like a bookshelf.
 
+
+
 // console.log(users[0].languages);
-
-
 
 /// Map
 const email = users.map(function (n) {
-   return n.email;
+    return n.email;
 });
 
-console.log(email);
+
+// console.log(email);
 
 
-
-/// Reduce
+/// Reduce - total experience
 let userCount = users.length;
+
 console.log(userCount);
 
 const experience = users.reduce((total, person) => {
     let totalXP = total + person.yearsOfExperience;
-        return totalXP;
+    return totalXP;
 }, 0) / userCount;
 
-console.log(experience);
+
+// console.log(experience);
 
 
-
+/// Reduce - email list
 const longestEmail = users.reduce((total, account) => {
-    let longest;
-    if(longest > account) {
-        longest = account.email.length;
-        return longest;
+    if( account.email.length > total.length ) {
+        total = account.email;
     }
-}, 0);
+    return total;
+
+}, "");
 
 console.log(longestEmail);
+
+
+
+/// Reduce - single string instructor list
+
+const singleList = users.reduce((sentence, user, i) => {
+   if(i < users.length-1) {
+       sentence += user.name + ", ";
+   }else {
+       sentence += `and ${user.name}.`
+   }
+    return sentence;
+}, "Your instructors are: " );
+
+console.log(singleList);
+
+
+
+
+
+/// Bonus
+const uniqueLangs = users.reduce((listOfLangs, user) => {
+    for (const lang of user.languages){
+        if (listOfLangs.indexOf(lang) === -1){
+            listOfLangs.push(lang);
+        }
+    }
+    return listOfLangs;
+}, []);
+
+console.log(uniqueLangs);
