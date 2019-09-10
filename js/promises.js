@@ -32,15 +32,61 @@
 
 ///////////////// Token Exercise ///////////////
 
-let grab = fetch('https://api.github.com/users', {headers: {'Authorization': 'token baac39ff807f94f9e39561059f882787a70d452f'}}).then(function (resolve) {
-    return resolve.json();
-}).then(function (data) {
-    console.log(data);
-});
+function getMostRecentPush(username) {
+    return fetch(`https://api.gitgub.com/users/${username}/events`, {headers: {'Authorization': `token baac39ff807f94f9e39561059f882787a70d452f`}})
+        .then(res => res.json())
+        .then(events => {
+            console.log(events);
+        })
+}
+
+getMostRecentPush('mitchellarnold')
 
 
 
 
+
+// const grab = fetch('https://api.github.com/users/:username/events', {headers: {'Authorization': 'token baac39ff807f94f9e39561059f882787a70d452f'}}).then(function (resolve) {
+//     return resolve.json();
+// }).then(function (data) {
+//     console.log(data);
+// });
+
+
+// condition check for push date on repo
+//
+
+
+
+
+
+
+
+
+
+// function getGithubUsernames(username) {
+//     return new Promise(((resolve, reject) => {
+//         if(username) {
+//             resolve(
+//
+//              // grab.filter(function (username) {
+//                 // console.log()
+//
+//
+//
+//
+//
+//                'Your username: ' + username
+//             )
+//         }else {
+//             reject('Please enter a username')
+//         }
+//     }));
+// };
+//
+// console.log(getGithubUsernames('mitchell'));
+//
+//
 // / function wait (ms) {
 //     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
@@ -56,31 +102,21 @@ let grab = fetch('https://api.github.com/users', {headers: {'Authorization': 'to
 //
 
 
-// condition check for push date on repo
-
-
-function getGithubUsernames(username) {
-    return new Promise(((resolve, reject) => {
-        if(username) {
-            resolve(grab
-
-
-               'Your username: ' + username
-            )
-        }else {
-            reject('Please enter a username')
-        }
-    }));
-};
-
-console.log(getGithubUsernames('mitchell'));
-
 
 // later on...
-
+//
 // getGithubUsernames().then((usernames) => {
 //     usernames.forEach((username) => {
-//         // do something with each username
+//         console.log(grab);
 //
 //     });
 // }).catch(error => console.error(error));
+//
+//
+// // getGithubUsernames('mitchell');
+//
+//
+// fetch('https://api.github.com/users')
+//     .then(response => console.log(response))
+//     .catch(error => console.error(error));
+//
