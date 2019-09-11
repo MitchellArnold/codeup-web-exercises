@@ -6,8 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>For Practice</title>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="../js/promises.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../js/promises.js"></script>
 
     <style>
         body {
@@ -26,29 +27,33 @@
 
 <div id="wrapper">
     <h1>Just for Practice</h1>
-        <p>This content is intended solely for practice purposes.</p>
+    <p>This content is intended solely for practice purposes.</p>
     <main id="main-content">
         <p>Scripts practice: </p>
+<!--///////////////////////////jQuery practice///////////////////////////-->
         <script>
             "use strict";
 
             $(document).ready(function () {
 
-
-                $('#main-content').click(function () {
-                    $('#main-content').css('color', 'pink');
-                });
-
-
+               $('#main-content').hover(
+                   function () {
+                       $(this).css('color', 'purple');
+                   },
+                   function () {
+                       $(this).css('color', 'grey');
+                   });
             });
-
+        </script>
+<!--////////////////////////////API practice////////////////////////////-->
+        <script>
 
         </script>
+
+
+
     </main>
 </div>
-
-
-
 
 
 </body>
