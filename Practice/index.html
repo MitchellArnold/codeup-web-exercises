@@ -7,10 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>For Practice</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="../js/promises.js"></script>
+
+    <style>
+        body {
+            background: darkgrey;
+            color: grey;
+            text-align: center;
+        }
+
+        #main-content {
+            border: 2em solid grey;
+        }
+
+    </style>
 </head>
 <body>
 
-<script src="../js/promises.js"></script>
+<div id="wrapper">
+    <h1>Just for Practice</h1>
+        <p>This content is intended solely for practice purposes.</p>
+    <main id="main-content">
+        <p>Scripts practice: </p>
+        <script>
+            "use strict";
+
+            $(document).ready(function () {
+
+
+                $('#main-content').click(function () {
+                    $('#main-content').css('color', 'pink');
+                });
+
+
+            });
+
+
+        </script>
+    </main>
+</div>
+
+
 
 
 

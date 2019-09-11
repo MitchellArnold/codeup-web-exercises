@@ -33,7 +33,7 @@
 ///////////////// Token Exercise ///////////////
 
 function getMostRecentPush(username) {
-    return fetch(`https://api.gitgub.com/users/${username}/events`, {headers: {'Authorization': `token baac39ff807f94f9e39561059f882787a70d452f`}})
+    return fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': `token baac39ff807f94f9e39561059f882787a70d452f`}})
         .then(res => res.json())
         .then(events => {
             console.log(events);
