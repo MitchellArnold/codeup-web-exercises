@@ -8,6 +8,7 @@
     <title>For Practice</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../js/keys.js"></script>
     <script src="../js/promises.js"></script>
 
     <style>
@@ -47,6 +48,31 @@
         </script>
 <!--////////////////////////////API practice////////////////////////////-->
         <script>
+            "use strict";
+        //     function getMostRecentPush(username) {
+        //     return fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': `token ${githubToken}`}})
+        //         .then(res => res.json())
+        //         .then(events => {
+        //             return events.filter(event => event.type === "PushEvent")[0].created_at;
+        //         });
+        // }
+        //
+        // getMostRecentPush('mitchellarnold').then(date => {
+        //     console.log(new Date(date).toDateString());
+        // });
+
+
+            const salesPeople = [
+                {name: 'Jim Halpert', sales: 100},
+                {name: 'Dwight Schrute', sales: 50},
+                {name: 'Andy Bernard', sales: 150},
+            ];
+
+            const totalSales = salesPeople.reduce((total, person) => {
+                return total + person.sales;
+            }, 0);
+
+            console.log(totalSales);
 
         </script>
 
